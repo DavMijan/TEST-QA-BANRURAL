@@ -65,24 +65,24 @@
         }
         guesses.textContent += userGuess + ' ';
 
-        if(guessCount == ATTEMPS) { 
+        if(userGuess == randomNumber) { 
+          lastResult.textContent = 'Felicitaciones! adivinaste el número!';
+          lastResult.style.backgroundColor = 'green'; 
+          setGameOver();
+        }else if(guessCount == ATTEMPS) { 
           lastResult.textContent = '!!!Pérdistes!!!';
           lastResult.style.backgroundColor = 'black';
           lowOrHi.textContent = '';
-          setGameOver();
-        } else if(userGuess == randomNumber) { 
-          lastResult.textContent = 'Felicitaciones! adivinaste el número!';
-          lastResult.style.backgroundColor = 'green'; 
           setGameOver();
         } else {
           lastResult.textContent = 'Incorrecto! ';
           lastResult.style.backgroundColor = 'red'; 
           if(userGuess < randomNumber) {
             lowOrHi.textContent = 'El número es mayor!';
-            lowOrHi.style.backgroundColor = 'black' 
+            lowOrHi.style.color = 'black'; 
           } else if(userGuess > randomNumber) {
             lowOrHi.textContent = 'El número es menor!';
-            lowOrHi.style.backgroundColor = 'black' 
+            lowOrHi.style.color = 'black'; 
           }
         }
 
@@ -93,7 +93,6 @@
     else{
       lastResult.textContent = 'Ingrese un numero entre 1 y 100';
       lastResult.style.backgroundColor = 'red';
-      setGameOver()
     }
   }
   guessSubmit.addEventListener('click', checkGuess); 
@@ -123,7 +122,7 @@
 
 	  lastResult.style.backgroundColor = 'white';
 
-	  randomNumber = Math.floor(Math.random()) + 1;
+	  randomNumber=Math.floor(Math.random() * 100) + 1;
   }
 </script>
 </html>
