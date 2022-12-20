@@ -59,6 +59,10 @@
   function checkGuess() {
 
     let userGuess = guessField.value;
+    if(userGuess % 1 !=0){
+    	lastResult.textContent = 'Ingrese un numero entero';
+        lastResult.style.backgroundColor = 'red';
+    }else{
     if (userGuess > 0 && userGuess <101){ 
         if(guessCount === 1) {
           guesses.textContent = 'Número aleatorio anterior: ';
@@ -93,6 +97,7 @@
     else{
       lastResult.textContent = 'Ingrese un numero entre 1 y 100';
       lastResult.style.backgroundColor = 'red';
+    }
     }
   }
   guessSubmit.addEventListener('click', checkGuess); 
