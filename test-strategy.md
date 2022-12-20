@@ -15,13 +15,17 @@ Error de Sintaxis la variable 'lowOrHi' deberia de llevar punto, ademas de que s
 variable .lastResut
 
 4. Se debe de comprobar que el numero ingresado este entre el rango de 1 a 100 por lo tanto se debe de agregar un comprobante de tipo if con su respectivo 
-else para realizar la validacion
+else para realizar la validacion, a su vez realizar la validacion de enteros.
+if(userGuess % 1 !=0){
+    	lastResult.textContent = 'Ingrese un numero entero';
+        lastResult.style.backgroundColor = 'red';
+}else{
 if (userGuess > 0 && userGuess <101){
 }
 else{
   lastResult.textContent = 'Debe ingresar un numero entre 1 y 100';
   lastResult.style.backgroundColor = 'red';
-}
+}}
 
 5.Se debe Corregir los valores dentro del condicional if(userGuess === randomNumber) para la variable del resultado y color, ya que si el userGuess y 
 el randomNumber coinciden, quiere decir que adivino el numero aleatorio, quedando el if asi:
